@@ -1,6 +1,7 @@
 # Depth-Map-and-collision-warning
 
-----------------------------------------------------Introduction-----------------------------------------------------------------
+####  Introduction
+
 Calculating Depth Maps/Disparity Maps from Monocular Images (Single Image)
 using Neural Network (Both VGG-16 and Resnet50) with post processing. The
 Network Works at 22fps for an Image (1240 * 720), 4 times the speed can be
@@ -8,9 +9,19 @@ obtained for every 50% reduction in the Input Image. From the Depth/Disparity Ma
 we can obtain relative distances of the object in the frame (the brighter pixels are
 nearer and so on) and give collision warning.
 
----------------------------------------------------------------------------------------------------------------------------------
+#### Requirements 
 
--------------------------------------------------README for the bash script:-----------------------------------------------------
+This code was tested with Tensorflow 1.0, CUDA 9.0, OpenCV <= 3.4.0, cuDNN v5-v7 and Ubuntu 16.04.
+
+#### Build using Repositories
+
+[darknet](https://github.com/AlexeyAB/darknet) and [monodepth](https://github.com/mrharicot/monodepth#training)
+
+Pretrained weights can be downloaded from the above repos.
+
+
+#### README for the bash script:(automate.sh)
+
 1. Convert the input video into frames with 20fps as the speed.
 2. Create another copy of each frame and resize it to dimensions 512x256.
 3. Run the Monodepth model sequentially on the resized frames. A numpy array of
@@ -27,9 +38,9 @@ the object name is written on each frame.
 this range causes a “COLLISION WARNING!” message to be displayed. The
 message is written on each frame whenever this condition occurs.
 7. Finally, convert the frames into video.
--------------------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------Workflow---------------------------------------------------------------------
+#### Workflow
+
 1) Go to monodepth folder which inside has yolo/darknet
 2) Run automate.sh bash script as superuser
 3) It automatically does the above
@@ -40,4 +51,9 @@ and yolo
 6) Depth.py to write distance on each frames with the help of centroids stored in
 another file.
 7) Finally combining everything together using ffmpeg
---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/VDFA1ZKOOUc/0.jpg)]
+(https://www.youtube.com/watch?v=VDFA1ZKOOUc)
