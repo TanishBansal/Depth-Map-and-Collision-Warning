@@ -8,10 +8,6 @@ obtained for every 50% reduction in the Input Image. From the Depth/Disparity Ma
 we can obtain relative distances of the object in the frame (the brighter pixels are
 nearer and so on) and give collision warning.
 
-Collision warning can be computed from the disparity map by specifying a range
-around the vehicle. If any object such as a vehicle, person, obstruction etc. comes
-within this range, then a warning is issued to warn the driver of a possibility of a
-collision.
 ---------------------------------------------------------------------------------------------------------------------------------
 
 -------------------------------------------------README for the bash script:-----------------------------------------------------
